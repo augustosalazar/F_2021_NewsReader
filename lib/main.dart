@@ -1,5 +1,7 @@
+import 'package:F_202110_NewsReader/bloc/bloc.dart';
 import 'package:F_202110_NewsReader/views/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: BlocProvider(
+        create: (context) => NewsBloc(),
+        child: MyHomePage(),
+      ),
     );
   }
 }

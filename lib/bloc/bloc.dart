@@ -4,7 +4,7 @@ import 'package:F_202110_NewsReader/bloc/bloc_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
-  NewsBloc(NewsState initialState) : super(initialState);
+  NewsBloc() : super(NewsEmptyState());
 
   @override
   Stream<NewsState> mapEventToState(NewsEvent event) async* {

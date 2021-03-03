@@ -7,7 +7,7 @@ abstract class NewsEvent extends Equatable {
 class FetchNewsEvent extends NewsEvent {
   final String topic;
 
-  FetchNewsEvent(this.topic);
+  FetchNewsEvent({this.topic});
 
   @override
   List<Object> get props => [topic];

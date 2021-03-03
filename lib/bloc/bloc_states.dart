@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:F_202110_NewsReader/data/news_item.dart';
 import 'package:equatable/equatable.dart';
 
