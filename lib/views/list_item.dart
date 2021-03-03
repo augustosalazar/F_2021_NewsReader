@@ -1,4 +1,4 @@
-import 'package:F_202110_NewsReader/views/news_item.dart';
+import 'package:F_202110_NewsReader/data/news_item.dart';
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
