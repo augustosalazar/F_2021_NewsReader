@@ -1,14 +1,17 @@
 import 'package:F_202110_NewsReader/bloc/bloc.dart';
+import 'package:F_202110_NewsReader/data/data_repository.dart';
 import 'package:F_202110_NewsReader/views/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(MyApp());
+  final DataRepository repository = DataRepository();
+  runApp(MyApp(repository: repository));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({this.repository});
+  final DataRepository repository;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: BlocProvider(
-        create: (context) => NewsBloc(),
+        create: (context) => NewsBloc(repository),
         child: MyHomePage(),
       ),
     );

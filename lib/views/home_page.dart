@@ -1,9 +1,12 @@
 import 'package:F_202110_NewsReader/views/empy_view.dart';
+import 'package:F_202110_NewsReader/views/error_view.dart';
+import 'package:F_202110_NewsReader/views/loaded_view.dart';
 import 'package:F_202110_NewsReader/views/loading_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/bloc.dart';
+import '../bloc/bloc_states.dart';
 import '../bloc/bloc_states.dart';
 import '../bloc/bloc_states.dart';
 
@@ -29,6 +32,12 @@ class MyHomePage extends StatelessWidget {
                     }
                     if (state is NewsLoadingState) {
                       return LoadingView(state: state);
+                    }
+                    if (state is NewsErrorState) {
+                      return ErrorView(state);
+                    }
+                    if (state is NewsLoadedState) {
+                      return LoadedView(state);
                     }
                     return Text('$state');
                   },

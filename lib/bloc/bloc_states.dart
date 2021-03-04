@@ -18,7 +18,7 @@ class NewsLoadedState extends NewsState {
   final List<NewsItem> news;
   final String topic;
 
-  NewsLoadedState(this.news, this.topic);
+  NewsLoadedState({this.news, this.topic});
 
   @override
   List<Object> get props => [news];
