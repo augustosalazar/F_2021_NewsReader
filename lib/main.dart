@@ -1,5 +1,6 @@
 import 'package:F_202110_NewsReader/bloc/bloc.dart';
 import 'package:F_202110_NewsReader/data/data_repository.dart';
+import 'package:F_202110_NewsReader/views/detail_view.dart';
 import 'package:F_202110_NewsReader/views/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
         create: (context) => NewsBloc(repository),
         child: MyHomePage(),
       ),
+      routes: {
+        MyHomePage.route: (context) => MyHomePage(),
+        NewsDetail.route: (context) => NewsDetail(),
+      },
     );
   }
 }

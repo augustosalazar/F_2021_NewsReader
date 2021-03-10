@@ -13,6 +13,8 @@ import '../bloc/bloc_states.dart';
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
 
+  static final String route = "homepage";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

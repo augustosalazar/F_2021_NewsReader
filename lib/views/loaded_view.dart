@@ -11,6 +11,10 @@ class LoadedView extends StatelessWidget {
   const LoadedView(this.state);
   final NewsState state;
 
+  _refreshList(BuildContext context, String topic) {
+    BlocUtils().event(context, RefreshNewsEvent(topic));
+  }
+
   @override
   Widget build(BuildContext context) {
     NewsLoadedState _state = state;
@@ -24,8 +28,11 @@ class LoadedView extends StatelessWidget {
       onHorizontalDragEnd: (details) {
         BlocUtils().event(context, ResetNewsEvent());
       },
-      child: ListView(
-        children: items,
+      child: RefreshIndicator(
+        child: ListView(
+          children: items,
+        ),
+        onRefresh: () => _refreshList(context, _state.topic),
       ),
     );
   }
